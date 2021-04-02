@@ -1,20 +1,36 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <HelloWorld :msg="userInfo"/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
+import { UserMutations } from './store/user/mutations';
 
 @Component({
   components: {
     HelloWorld,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+  get helloMessage(){
+    return this.$store.state.user.userName;
+  }
+  get userInfo(){
+    return this.$store.getters.getInfo;
+  }
+
+  mounted(){
+    this.$store.dispatch({type:"fetchMessageLog"});
+    setTimeout(()=>{
+      this.$store.commit(UserMutations.SET_USERNAME,"更改陳測試")
+    },3000)
+  }
+}
 </script>
 
 <style>
