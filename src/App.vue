@@ -1,6 +1,7 @@
 <template>
   <b-container id="app">
     <Nav />
+    <router-view></router-view>
     <!-- <HelloWorld :msg="userInfo"/> -->
   </b-container>
 </template>

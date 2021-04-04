@@ -6,8 +6,8 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#" @click="goHelloWorld()">Link</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+        <b-nav-item @click="goHelloWorld()">Link</b-nav-item>
+        <b-nav-item @click="gotest()">Go Test</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -44,7 +44,10 @@ import {Component,Vue} from "vue-property-decorator";
 @Component
 export default class extends Vue{
     goHelloWorld(){
-        this.$router.push("/")
+        this.$router.push({ path: 'add' }).catch(err => {err});
+    }
+    gotest(){
+        return this.$router.push({ path: 'test' }).catch(err => {err});
     }
 
 }
