@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <b-navbar-brand @click="goCarousel()" style="cursor: pointer;">首頁</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -49,6 +49,10 @@ export default class extends Vue{
     gotest(){
         return this.$router.push({ path: 'test' }).catch(err => {err});
     }
+    goCarousel(){
+      return this.$router.push("/").catch(err=>{err});
+    }
+
 
 }
 

@@ -16,7 +16,7 @@ import { UserMutations } from './store/user/mutations';
 @Component({
   components: {
     // HelloWorld,
-    Nav,
+    Nav
   },
 })
 export default class App extends Vue {
