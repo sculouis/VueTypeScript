@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ userInfo }}</h1>
     <h1>{{counter}}</h1>
     <b-button variant="primary" @click="incrementCounter">Click Me</b-button>
   </div>
@@ -12,6 +12,11 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+
+    get userInfo(){
+    return this.$store.getters.getInfo;
+  }
+
   counter= 0;
 
   incrementCounter(){

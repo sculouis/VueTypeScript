@@ -1,5 +1,5 @@
 <template>
-  <b-container id="app">
+  <b-container id="app" style="margin-top: 10px;">
     <Nav />
     <router-view></router-view>
     <!-- <HelloWorld :msg="userInfo"/> -->
