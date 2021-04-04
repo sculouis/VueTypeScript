@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h1>{{counter}}</h1>
-    <button @click="incrementCounter">Click Me</button>
+    <b-button variant="primary" @click="incrementCounter">Click Me</b-button>
   </div>
 </template>
 

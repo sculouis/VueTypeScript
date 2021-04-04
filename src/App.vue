@@ -1,25 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg="userInfo"/>
-  </div>
+  <b-container id="app">
+    <Nav />
+    <!-- <HelloWorld :msg="userInfo"/> -->
+  </b-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
+import Nav from './components/Nav.vue';
+
 import { UserMutations } from './store/user/mutations';
 
 @Component({
   components: {
-    HelloWorld,
+    // HelloWorld,
+    Nav,
   },
 })
 export default class App extends Vue {
 
-  get helloMessage(){
-    return this.$store.state.user.userName;
-  }
+  // get helloMessage(){
+  //   return this.$store.state.user.userName;
+  // }
   get userInfo(){
     return this.$store.getters.getInfo;
   }
