@@ -2,7 +2,10 @@
   <div class="hello">
     <h1>{{ userInfo }}</h1>
     <h1>{{counter}}</h1>
-    <b-button variant="primary" @click="incrementCounter">Click Me</b-button>
+    <b-button variant="primary" @click="incrementCounter">
+      <b-icon icon="exclamation-circle-fill"></b-icon>
+       Click Me
+    </b-button>
   </div>
 </template>
 
